@@ -1,3 +1,16 @@
+const http = require('http');
+const express = require('express');
+const app = express();
+app.get("/", (request, response) => {
+  console.log(Date.now() + " Ping Received");
+  response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+}, 280000);
+
+
 
 const Discord = require('discord.js');
 const bot = new Discord.Client();
@@ -10,7 +23,7 @@ const version = '**1.0.1** [Aplha]';
 
 var fs = require('fs');
 
-var commandsList = fs.readFileSync('Storage/commands.txt', 'utf8');
+//var commandsList = fs.readFileSync('Storage/commands.txt', 'utf8');
 
 
 bot.on('ready' , () => {
@@ -35,6 +48,7 @@ bot.on('message' , message=>{
         
         case 'author' : 
             message.channel.send('I was made by *LTJG Per_von_Harke*')
+            break;
         // The bot will send an embed with the Link as the title a little description and a a little text at the bottom of the inbed with the author of the website. 
         case 'website' :
                 message.channel.send({embed: {
@@ -113,5 +127,5 @@ bot.on('message' , message=>{
     
 })
 
-bot.login(token);
+bot.login(process.env.TOKEN);          //alternativ "token" in die Klammern einsetzen!
 
