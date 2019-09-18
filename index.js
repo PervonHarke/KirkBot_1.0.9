@@ -23,6 +23,8 @@ const version = '**1.0.1** [Aplha]';
 
 var fs = require('fs');
 
+//var commandsList = fs.readFileSync('commands.txt', 'utf8');
+
 //var commandsList = fs.readFileSync('Storage/commands.txt', 'utf8');
 
 
@@ -78,11 +80,11 @@ bot.on('message' , message=>{
 
 
         //info over the author
-        case 'info' :
-            if (args[1] === 'author'){
-            message.channel.send('Per_von_Harke');
-            }
-            break;   
+       // case 'info' :
+       //     if (args[1] === 'author'){
+       //     message.channel.send('Per_von_Harke');
+       //     }
+       //     break;   
         
         
         //if no "Bacon Staff" role is existing the bot will say it and delet his own message after 5 seconds
@@ -98,7 +100,11 @@ bot.on('message' , message=>{
                 color: 3447003,
                 author: { },
                 title: "*AVAILABLE COMMANDS*",
-                description: (commandsList),
+                description: "A list of all available commands to use!",
+                fields:[{
+                    name: "!website",
+                    value: ""
+                }]
                 timestamp: new Date(),
                 footer: {
                 text: '© -LTJG Per_von_Harke '

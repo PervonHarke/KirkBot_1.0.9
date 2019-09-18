@@ -1,0 +1,10 @@
+Members:
+!Website            [Website/Forum for -=Kirks Hangar=-]
+!info version       [What version the bot is atm]
+!ping               [pong]
+!author             [Who made this bot]
+!help               [Sends this message]
+!commands           [Sends this message]
+
+*Bacon Staff only:*
+!clear []           [Typed in "!clear 5" , will deleted 5 messages]
