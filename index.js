@@ -100,25 +100,25 @@ bot.on('message' , message=>{
                 color: 3447003,
                 author: { },
                 title: "*AVAILABLE COMMANDS*",
-                description: "A list of all available commands to use!",
+                description: "A list of all available commands to use for normal Members.",
                 fields:[{
-                    name: "!website",
+                    name: "**!website**",
                     value: "Sends an Embed with the Link to the official Kirks Hangar Website."
                 },
                    {
-                    name: "!ping",
+                    name: "**!ping**",
                     value: "Makes the bot reply with pong!"
                 },
                 {
-                    name: "!author",
+                    name: "**!author**",
                     value: "Who made this bot."
                 },
                 {
-                    name: "!info version",
+                    name: "**!info version**",
                     value: "What version this bot is."
                 },
                 {
-                    name: "!commands",
+                    name: "**!commands**",
                     value: "Will bring up and embed with commands only available to Bacon Staff."
                 },
                         ],
@@ -137,8 +137,8 @@ bot.on('message' , message=>{
                 title: "*BACON STAFF ONLY COMMANDS*",
                 description: "Commands which can only be used by Members with the Role Bacon Staff.",
                 fields : [{
-                   name: "!clear ",
-                  value: "How to use: Write 
+                   name: "**!clear [...]**",
+                  value: "Type in the number of messages you want to delete instead of [...]",
                 }],
                 timestamp: new Date(),
                 footer: {
