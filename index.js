@@ -103,8 +103,25 @@ bot.on('message' , message=>{
                 description: "A list of all available commands to use!",
                 fields:[{
                     name: "!website",
-                    value: ""
-                }]
+                    value: "Sends an Embed with the Link to the official Kirks Hangar Website."
+                },
+                   {
+                    name: "!ping",
+                    value: "Makes the bot reply with pong!"
+                },
+                {
+                    name: "!author",
+                    value: "Who made this bot."
+                },
+                {
+                    name: "!info version",
+                    value: "What version this bot is."
+                },
+                {
+                    name: "!commands",
+                    value: "Will bring up and embed with commands only available to Bacon Staff."
+                },
+                        ],
                 timestamp: new Date(),
                 footer: {
                 text: '© -LTJG Per_von_Harke '
@@ -117,8 +134,12 @@ bot.on('message' , message=>{
             message.channel.send({embed : {
                 color: 3447003,
                 author: { },
-                title: "*AVAILABLE COMMANDS*",
-                description: (commandsList),
+                title: "*BACON STAFF ONLY COMMANDS*",
+                description: "Commands which can only be used by Members with the Role Bacon Staff.",
+                fields : [{
+                   name: "!clear ",
+                  value: "How to use: Write 
+                }],
                 timestamp: new Date(),
                 footer: {
                 text: '© -LTJG Per_von_Harke '
