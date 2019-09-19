@@ -34,7 +34,8 @@ bot.on('ready' , () => {
 })
 
 bot.on('message' , message=>{
-    // searches messages for the " ! " PREFIX that iniates a command for the bot. 
+    
+  // searches messages for the " ! " PREFIX that iniates a command for the bot. 
     let args = message.content.substring(PREFIX.length).split(" ");
     
     //Chatfilter
@@ -50,24 +51,33 @@ bot.on('message' , message=>{
     }
     
    
-   if (message.content.attachement == true);
-     message.react ('🆙');
+   //if (message.content.attachement == true);
+    // message.react ('🆙');
     
+    if (message.author.bot) return;
   
-    
       
     
     
     switch(args[0]){
         
+       
+        
+        
         //ping pong
-        case 'ping' :
-            message.channel.send('pong!')
+        case 'ping' :{
+                 // Send a message
+                message.channel.send('pong!');
+              }
             break;
+        
+        
         
         case 'author' : 
             message.channel.send('I was made by *LTJG Per_von_Harke*')
             break;
+        
+        
         // The bot will send an embed with the Link as the title a little description and a a little text at the bottom of the inbed with the author of the website. 
         case 'website' :
                 message.channel.send({embed: {
