@@ -45,6 +45,7 @@ bot.on('message' , message=>{
    } //checks if the current item is included in the message
     if (foundInText){
       message.delete();
+      //client.sendMessage(msg.author, "I can see you sent a message in: " + msg.channel.name + ", that was blacklisted and there for deleted. Please don't use these words. They are blacklisted for a reason!");
       message.channel.send('Sorry, that word ist blacklisted.').then(msg => msg.delete(5000)); 
     }
     
