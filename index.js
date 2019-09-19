@@ -38,16 +38,19 @@ bot.on('message' , message=>{
     let args = message.content.substring(PREFIX.length).split(" ");
     
     //Chatfilter
-   let blacklisted = ['Nigger','Gas the Jews','Hitler did nothing Wrong']; 
+   let blacklisted = ['Nigger','Gas the Jews','Hitler did nothing Wrong','urethra play','neger',]; 
    let foundInText = false;
    for (var i in blacklisted){ //This loops each item blacklisted
        if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
    } //checks if the current item is included in the message
     if (foundInText){
       message.delete();
-      message.channel.send('Sorry <@your_id_here> , that word ist blacklisted.').then(msg => msg.delete(5000)); 
+      message.channel.send('Sorry, that word ist blacklisted.').then(msg => msg.delete(5000)); 
     }
     
+   
+    
+      
     
     
     switch(args[0]){
