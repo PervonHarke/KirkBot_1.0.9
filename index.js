@@ -71,10 +71,8 @@ bot.on('message' , message=>{
               }
             break;
         
-      case 'test' :{
-           message.channel.send(commandlist)
-      }
-        
+      
+       break; 
         case 'author' : 
             message.channel.send('I was made by *LTJG Per_von_Harke*')
             break;
