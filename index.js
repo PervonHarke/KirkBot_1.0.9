@@ -51,7 +51,7 @@ bot.on('message' , message=>{
     
    
    if (message.content.attachement == true);
-      message._addReaction('🆙');
+     message.react ('🆙');
     
   
     
