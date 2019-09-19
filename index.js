@@ -49,8 +49,10 @@ bot.on('message' , message=>{
       message.channel.send('Sorry,that word ist blacklisted.' + message.author).then(msg => msg.delete(5000)); 
     }
     
-    if (message.content.attachement.client);
-      message.channel.send (message.attachement.client);
+    module.exports.run = async (bot,message,args) => {
+      if (message.attachement != true=) return;
+          message.react('🆙');
+    }
   
     
       
