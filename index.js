@@ -19,7 +19,7 @@ const bot = new Discord.Client();
 const token = 'NjIxNjc5ODE0OTUyMDkxNjY5.XXppDQ.ntQuMQPoK11jE4tCFVm8CuoS2Zo';
 
 const PREFIX = '!';
-const version = '**1.0.1** [Aplha]';
+const version = '**1.0.5** WIP';
 
 var fs = require('fs');
 
@@ -46,7 +46,7 @@ bot.on('message' , message=>{
     if (foundInText){
       message.delete();
       //client.sendMessage(msg.author, "I can see you sent a message in: " + msg.channel.name + ", that was blacklisted and there for deleted. Please don't use these words. They are blacklisted for a reason!");
-      message.channel.send('Sorry, that word ist blacklisted.').then(msg => msg.delete(5000)); 
+      message.channel.send('Sorry,that word ist blacklisted.' + message.author).then(msg => msg.delete(5000)); 
     }
     
    
@@ -85,7 +85,7 @@ bot.on('message' , message=>{
         // if only "info" is typed in the bot will respond with an error message else it will answer with the current version.
         case 'info' :
             if (args[1] === 'version'){
-                message.channel.send('version:_' + version);
+                message.channel.send('version:' + version);
             }else{
                 message.channel.send('**INVALID COMMAND**')
             }
@@ -120,7 +120,7 @@ bot.on('message' , message=>{
                 },
                    {
                     name: "**!ping**",
-                    value: "Makes the bot reply with pong!"
+                    value: "Makes the bot reply with [pong!]"
                 },
                 {
                     name: "**!author**",
