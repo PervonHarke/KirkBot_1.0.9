@@ -29,7 +29,7 @@ var fs = require('fs');
 
 
 bot.on('ready' , () => {
-    console.log('Alle System sind hochgefahren. Es kann losgehen!');
+    console.log('The bot is online and ready!');
     bot.user.setActivity('DCS World on -=Kirks Hangar=-' , { tpye: 'PLAYING'}).catch(console.error);
 })
 
@@ -49,7 +49,9 @@ bot.on('message' , message=>{
       message.channel.send('Sorry,that word ist blacklisted.' + message.author).then(msg => msg.delete(5000)); 
     }
     
-   
+    if (message.content.attachement.client);
+      message.channel.send (message.attachement.client);
+  
     
       
     
