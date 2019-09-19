@@ -49,10 +49,9 @@ bot.on('message' , message=>{
       message.channel.send('Sorry,that word ist blacklisted.' + message.author).then(msg => msg.delete(5000)); 
     }
     
-    module.exports.run = async (bot,message,args) => {
-      if (message.attachement != true=) return;
-          message.react('🆙');
-    }
+   
+    
+    
   
     
       
@@ -98,7 +97,7 @@ bot.on('message' , message=>{
 
         //info over the author
        // case 'info' :
-       //     if (args[1] === 'author'){
+       //     if (args[2] === 'author'){
        //     message.channel.send('Per_von_Harke');
        //     }
        //     break;   
