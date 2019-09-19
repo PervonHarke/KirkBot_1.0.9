@@ -8,3 +8,5 @@ Members:
 
 *Bacon Staff only:*
 !clear []           [Typed in "!clear 5" , will deleted 5 messages]
+
+This is here just for testing.
