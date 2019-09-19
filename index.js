@@ -25,7 +25,7 @@ var fs = require('fs');
 
 //var commandsList = fs.readFileSync('commands.txt', 'utf8');
 
-//var commandsList = fs.readFileSync('Storage/commands.txt', 'utf8');
+var commandsList = fs.readFileSync('Storage/commands.txt', 'utf8');
 
 
 bot.on('ready' , () => {
@@ -71,7 +71,9 @@ bot.on('message' , message=>{
               }
             break;
         
-        
+      case 'test' :{
+           message.channel.send(commandlist)
+      }
         
         case 'author' : 
             message.channel.send('I was made by *LTJG Per_von_Harke*')
