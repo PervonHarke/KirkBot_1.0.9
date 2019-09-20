@@ -16,7 +16,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 //do not share this token with anyone else
-const token = '2EjpsTIdfeEO3JKcZEscQu9iWpMEJO79';
+const token = 'NjIxNjc5ODE0OTUyMDkxNjY5.XYVktg.f-CZdHTTMhdnIovip-F1wNEDOjU';
 
 const PREFIX = '!';
 const version = '**1.0.5** WIP';
