@@ -18,15 +18,14 @@ const bot = new Discord.Client();
 //do not share this token with anyone else
 const token = 'NjIxNjc5ODE0OTUyMDkxNjY5.XYVktg.f-CZdHTTMhdnIovip-F1wNEDOjU';
 
+//Prefix and Version 
 const PREFIX = '!';
 const version = '**1.0.5** WIP';
   
 var fs = require('fs');
-
-//var commandsList = fs.readFileSync('commands.txt', 'utf8');
-
 var commandsList = fs.readFileSync('Storage/commands.txt', 'utf8');
 
+//var Channel = message.channel.name; 
 
 bot.on('ready' , () => {
     console.log('The bot is online and ready!');
@@ -56,8 +55,7 @@ bot.on('message' , message=>{
     
     if (message.author.bot) return;
   
-    if (message.attachement);
-      
+    
   
       
     
