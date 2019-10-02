@@ -80,14 +80,18 @@ bot.on('message' , message=>{
         
         
         // The bot will send an embed with the Link as the title a little description and a a little text at the bottom of the inbed with the author of the website. 
-        case 'website' :
+        case 'info Kirk' :
                 message.channel.send({embed: {
                     color: 3447003,
                     author: { },
                     title: "**The website for -=Kirks Hangar=-**",
                     url: "http://kuenzel-design.com/kirks-hangar/",
                     description: "*Kirks-Hangar is a public server and community, which is open for everyone, who is interessted in simulation flying. Kirks-Hangar is also the homebase of the BACON Squadron, a naval ops focused DCS squadron, which mainly operates the F/A-18C Lot 20 and the AV8B NA. Our server is located in Germany and is mostly used, to host a freeflight training mission.*  ",
-                    fields:[{}]
+                    fields:[{
+                      name: "**-=Kirks Hangar 2=-**",
+                      value:"IP: *88.99.29.4:10309*"
+                    }                    
+                        ],
                     timestamp: new Date(),
                     footer: {
                       text: "© -CAPT Kirk CAG BACON Squadron and Admin of Kirks-Hangar. "
