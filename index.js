@@ -20,7 +20,7 @@ const token = 'NjIxNjc5ODE0OTUyMDkxNjY5.XYVktg.f-CZdHTTMhdnIovip-F1wNEDOjU';
 
 //Prefix and Version 
 const PREFIX = '!';
-const version = '**1.0.5** WIP';
+const version = '**1.0.5**_WIP';
   
 var fs = require('fs');
 var commandsList = fs.readFileSync('Storage/commands.txt', 'utf8');
@@ -36,7 +36,7 @@ bot.on('message' , message=>{
     
   // searches messages for the " ! " PREFIX that iniates a command for the bot. 
     let args = message.content.substring(PREFIX.length).split(" ");
-    
+     
     //Chatfilter
    let blacklisted = ['Nigger','Gas the Jews','Hitler did nothing Wrong','urethra play','neger',]; 
    let foundInText = false;
@@ -80,18 +80,13 @@ bot.on('message' , message=>{
         
         
         // The bot will send an embed with the Link as the title a little description and a a little text at the bottom of the inbed with the author of the website. 
-        case 'info Kirk' :
+        case 'Website' :
                 message.channel.send({embed: {
                     color: 3447003,
                     author: { },
                     title: "**The website for -=Kirks Hangar=-**",
                     url: "http://kuenzel-design.com/kirks-hangar/",
                     description: "*Kirks-Hangar is a public server and community, which is open for everyone, who is interessted in simulation flying. Kirks-Hangar is also the homebase of the BACON Squadron, a naval ops focused DCS squadron, which mainly operates the F/A-18C Lot 20 and the AV8B NA. Our server is located in Germany and is mostly used, to host a freeflight training mission.*  ",
-                    fields:[{
-                      name: "**-=Kirks Hangar 2=-**",
-                      value:"IP: *88.99.29.4:10309*"
-                    }                    
-                        ],
                     timestamp: new Date(),
                     footer: {
                       text: "© -CAPT Kirk CAG BACON Squadron and Admin of Kirks-Hangar. "
@@ -104,7 +99,18 @@ bot.on('message' , message=>{
         // if only "info" is typed in the bot will respond with an error message else it will answer with the current version.
         case 'info' :
             if (args[1] === 'version'){
-                message.channel.send('version:' + version);
+                //message.channel.send('version:' + version);
+                message.channel.send({embed: {
+                    color: 3447003,
+                    author: { },
+                    title: "Version",
+                    description:version,
+                    timestamp: new Date(),
+                    footer: {
+                      text: "© -KirkBot "
+                    }
+                  }
+                });
             }else{
                 message.channel.send('**INVALID COMMAND**')
             }
@@ -119,7 +125,7 @@ bot.on('message' , message=>{
        //     break;   
         
         
-        //if no "Bacon Staff" role is existing the bot will say it and delet his own message after 5 seconds
+        //if no "Bacon Staff" role is existing the bot will say it and delete his own message after 5 seconds
          case 'clear' :
             if(!message.member.roles.find(r => r.name === "Bacon Staff")) return message.channel.send('iNsuFficient PERmISsION').then(msg => msg.delete(5000));      
             //if no value is set (how many message should get deleted) the bot will answer.
@@ -134,8 +140,8 @@ bot.on('message' , message=>{
                 title: "*AVAILABLE COMMANDS*",
                 description: "A list of all available commands to use for normal Members.",
                 fields:[{
-                    name: "**!website**",
-                    value: "Sends an Embed with the Link to the official Kirks Hangar Website."
+                    name: "**!Kirks Hangar**",
+                    value: "Sends an Embed with the Link to the official Kirks Hangar Website aswell as the IP adresses for both the Caucasus and the Persian Gulf server."
                 },
                    {
                     name: "**!ping**",
