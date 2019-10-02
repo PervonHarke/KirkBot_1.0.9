@@ -87,7 +87,7 @@ bot.on('message' , message=>{
                     title: "**The website for -=Kirks Hangar=-**",
                     url: "http://kuenzel-design.com/kirks-hangar/",
                     description: "*Kirks-Hangar is a public server and community, which is open for everyone, who is interessted in simulation flying. Kirks-Hangar is also the homebase of the BACON Squadron, a naval ops focused DCS squadron, which mainly operates the F/A-18C Lot 20 and the AV8B NA. Our server is located in Germany and is mostly used, to host a freeflight training mission.*  ",
-
+                    fields:[{}]
                     timestamp: new Date(),
                     footer: {
                       text: "© -CAPT Kirk CAG BACON Squadron and Admin of Kirks-Hangar. "
