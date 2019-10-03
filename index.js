@@ -80,22 +80,13 @@ bot.on('message' , message=>{
         
         
         // The bot will send an embed with the Link as the title a little description and a a little text at the bottom of the inbed with the author of the website. 
-        case "kirkshangar" :
+        case "website" :
                 message.channel.send({embed: {
                     color: 3447003,
                     author: { },
                     title: "**The website for -=Kirks Hangar=-**",
                     url: "http://kuenzel-design.com/kirks-hangar/",
                     description: "*Kirks-Hangar is a public server and community, which is open for everyone, who is interessted in simulation flying. Kirks-Hangar is also the homebase of the BACON Squadron, a naval ops focused DCS squadron, which mainly operates the F/A-18C Lot 20 and the AV8B NA. Our server is located in Germany and is mostly used, to host a freeflight training mission.*  ",
-                     fields:[{
-                      name: "**-=Kirks Hangar=-**",
-                      value:"IP: *WIP*"
-                    },
-                    {  
-                      name: "*-=Kirks Hangar 2=-*",
-                      value:"IP: *88.99.29.4:10309*",
-                    }      
-                            ],
                   timestamp: new Date(),
                     footer: {
                       text: "© -CAPT Kirk CAG BACON Squadron and Admin of Kirks-Hangar. "
@@ -103,20 +94,32 @@ bot.on('message' , message=>{
                   }
                 });
             break;
-
-      case 'info' :
-            message.channel.send({embed: {
+        
+        case "server" :
+                message.channel.send({embed: {
                     color: 3447003,
                     author: { },
-                    title: "Version",
-                    description:version,
-                    timestamp: new Date(),
+                    title: "",
+                    url: "",
+                    description: "",
+                  fields:[{
+                      name: "**-=Kirks Hangar=-**",
+                      value:"IP: *W I P*"
+                    },
+                    {  
+                      name: "**-=Kirks Hangar 2=-**",
+                      value:"IP: *88.99.29.4:10309*",
+                    }      
+                            ],
+                  timestamp: new Date(),
                     footer: {
-                      text: "© -KirkBot "
+                      text: "© -CAPT Kirk "
                     }
                   }
                 });
-        break;
+            break;
+
+
         // if only "info" is typed in the bot will respond with an error message else it will answer with the current version.
         case 'info' :
             if (args[1] === 'version'){
@@ -130,18 +133,12 @@ bot.on('message' , message=>{
                       text: "© -KirkBot "
                     }
                   }
-                }); 
+                                     }
+                )}; 
             break;
 
-
-        //info over the author
-       // case 'info' :
-       //     if (args[2] === 'author'){
-       //     message.channel.send('Per_von_Harke');
-       //     }
-       //     break;   
-        
-        
+              
+              
         //if no "Bacon Staff" role is existing the bot will say it and delete his own message after 5 seconds
          case 'clear' :
             if(!message.member.roles.find(r => r.name === "Bacon Staff")) return message.channel.send('iNsuFficient PERmISsION').then(msg => msg.delete(5000));      
@@ -168,14 +165,12 @@ bot.on('message' , message=>{
                     name: "**!author**",
                     value: "Who made this bot."
                 },
-                {
-                    name: "**!info version**",
-                    value: "What version this bot is."
-                },
+                
                 {
                     name: "**!commands**",
                     value: "Will bring up and embed with commands only available to Bacon Staff."
                 },
+               
                         ],
                 timestamp: new Date(),
                 footer: {
