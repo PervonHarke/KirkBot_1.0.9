@@ -80,14 +80,23 @@ bot.on('message' , message=>{
         
         
         // The bot will send an embed with the Link as the title a little description and a a little text at the bottom of the inbed with the author of the website. 
-        case 'Website' :
+        case "kirkshangar" :
                 message.channel.send({embed: {
                     color: 3447003,
                     author: { },
                     title: "**The website for -=Kirks Hangar=-**",
                     url: "http://kuenzel-design.com/kirks-hangar/",
                     description: "*Kirks-Hangar is a public server and community, which is open for everyone, who is interessted in simulation flying. Kirks-Hangar is also the homebase of the BACON Squadron, a naval ops focused DCS squadron, which mainly operates the F/A-18C Lot 20 and the AV8B NA. Our server is located in Germany and is mostly used, to host a freeflight training mission.*  ",
-                    timestamp: new Date(),
+                     fields:[{
+                      name: "**-=Kirks Hangar=-**",
+                      value:"IP: *WIP*"
+                    },
+                    {  
+                      name: "*-=Kirks Hangar 2=-*",
+                      value:"IP: *88.99.29.4:10309*",
+                    }      
+                            ],
+                  timestamp: new Date(),
                     footer: {
                       text: "© -CAPT Kirk CAG BACON Squadron and Admin of Kirks-Hangar. "
                     }
@@ -95,12 +104,8 @@ bot.on('message' , message=>{
                 });
             break;
 
-
-        // if only "info" is typed in the bot will respond with an error message else it will answer with the current version.
-        case 'info' :
-            if (args[1] === 'version'){
-                //message.channel.send('version:' + version);
-                message.channel.send({embed: {
+      case 'info' :
+            message.channel.send({embed: {
                     color: 3447003,
                     author: { },
                     title: "Version",
@@ -111,9 +116,21 @@ bot.on('message' , message=>{
                     }
                   }
                 });
-            }else{
-                message.channel.send('**INVALID COMMAND**')
-            }
+        break;
+        // if only "info" is typed in the bot will respond with an error message else it will answer with the current version.
+        case 'info' :
+            if (args[1] === 'version'){
+                message.channel.send({embed: {
+                    color: 3447003,
+                    author: { },
+                    title: "Version",
+                    description:version,
+                    timestamp: new Date(),
+                    footer: {
+                      text: "© -KirkBot "
+                    }
+                  }
+                }); 
             break;
 
 
@@ -140,7 +157,7 @@ bot.on('message' , message=>{
                 title: "*AVAILABLE COMMANDS*",
                 description: "A list of all available commands to use for normal Members.",
                 fields:[{
-                    name: "**!Kirks Hangar**",
+                    name: "**!kirks hangar**",
                     value: "Sends an Embed with the Link to the official Kirks Hangar Website aswell as the IP adresses for both the Caucasus and the Persian Gulf server."
                 },
                    {
