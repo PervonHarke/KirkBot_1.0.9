@@ -1,6 +1,8 @@
 const http = require('http');
 const express = require('express');
 const app = express();
+
+
 app.get("/", (request, response) => {
   console.log(Date.now() + " Ping Received");
   response.sendStatus(200);
@@ -11,21 +13,16 @@ setInterval(() => {
 }, 280000);
 
 
-
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-
 //do not share this token with anyone else
 const token = 'NjIxNjc5ODE0OTUyMDkxNjY5.XYVktg.f-CZdHTTMhdnIovip-F1wNEDOjU';
-
 //Prefix and Version 
 const PREFIX = '!';
-const version = '**1.0.7**_WIP';
-  
+const version = '**1.0.7**_WIP'; 
 var fs = require('fs');
 var commandsList = fs.readFileSync('Storage/commands.txt', 'utf8');
 
-//var Channel = message.channel.name; 
 
 bot.on('ready' , () => {
     console.log('The bot is online and ready!');
@@ -33,37 +30,30 @@ bot.on('ready' , () => {
 })
 
 bot.on('message' , message=>{
-    
-  // searches messages for the " ! " PREFIX that iniates a command for the bot. 
-    let args = message.content.substring(PREFIX.length).split(" ");
-     
-    //Chatfilter
-   let blacklisted = ['Nigger','Gas the Jews','Hitler did nothing Wrong','urethra play','neger',]; 
-   let foundInText = false;
-   for (var i in blacklisted){ //This loops each item blacklisted
-       if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
-   } //checks if the current item is included in the message
-    if (foundInText){
-      message.delete();
-      //client.sendMessage(msg.author, "I can see you sent a message in: " + msg.channel.name + ", that was blacklisted and there for deleted. Please don't use these words. They are blacklisted for a reason!");
-      message.channel.send('Sorry,that word ist blacklisted.' + message.author).then(msg => msg.delete(5000)); 
-    }
-    
    
-   //if (message.content.attachement == true);
-    // message.react ('🆙');
+  
+  // searches messages for the " ! " PREFIX that iniates a command for the bot. 
+  let args = message.content.substring(PREFIX.length).split(" ");
     
+  
+  //Chatfilter
+  let blacklisted = ['Nigger','Gas the Jews','Hitler did nothing Wrong','urethra play','neger',]; 
+  let foundInText = false;
+  for (var i in blacklisted){ //This loops each item blacklisted
+      if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
+  } //checks if the current item is included in the message
+  if (foundInText){
+    message.delete();
+    //client.sendMessage(msg.author, "I can see you sent a message in: " + msg.channel.name + ", that was blacklisted and there for deleted. Please don't use these words. They are blacklisted for a reason!");
+    message.channel.send('Sorry,that word ist blacklisted.' + message.author).then(msg => msg.delete(5000)); 
+    }
+
+  
+    //prevents other bots from performing commands.
     if (message.author.bot) return;
   
-    
-  
-      
-    
-    
+
     switch(args[0]){
-        
-       
-        
         
         //ping pong
         case 'ping' :{
@@ -72,7 +62,8 @@ bot.on('message' , message=>{
               }
             break;
         
-      
+        
+       //Author command
        break; 
         case 'author' : 
             message.channel.send('I was made by *LTJG Per_von_Harke*')
@@ -95,6 +86,8 @@ bot.on('message' , message=>{
                 });
             break;
         
+        
+        //IP adress of each available server.
         case "server" :
                 message.channel.send({embed: {
                     color: 3447003,
@@ -133,13 +126,12 @@ bot.on('message' , message=>{
                       text: "© -KirkBot "
                     }
                   }
-                                     }
-                )}; 
+                }
+            )}; 
             break;
-
               
               
-        //if no "Bacon Staff" role is existing the bot will say it and delete his own message after 5 seconds
+        //Deletes messages in mass. 
          case 'clear' :
             if(!message.member.roles.find(r => r.name === "Bacon Staff")) return message.channel.send('iNsuFficient PERmISsION').then(msg => msg.delete(5000));      
             //if no value is set (how many message should get deleted) the bot will answer.
@@ -147,6 +139,8 @@ bot.on('message' , message=>{
             message.channel.bulkDelete(args[1]);
         break;                    
         
+
+        //Help Embed
         case 'help':  {
             message.channel.send({embed : {
                 color: 3447003,
@@ -186,8 +180,10 @@ bot.on('message' , message=>{
               }
             });  
             break;
-        }
-        case 'commands':  {
+          }
+        
+          //Bacon Staff Commands
+          case 'commands':  {
             message.channel.send({embed : {
                 color: 3447003,
                 author: { },
@@ -203,13 +199,9 @@ bot.on('message' , message=>{
                 }                
               }
             });  
-            break;
-
-        
+            break;        
        }
-    }
-    
+    }    
 })
 
-bot.login(process.env.TOKEN);          //alternativ "token" in die Klammern einsetzen!
-
+bot.login(process.env.TOKEN);
