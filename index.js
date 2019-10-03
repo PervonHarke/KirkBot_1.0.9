@@ -20,7 +20,7 @@ const token = 'NjIxNjc5ODE0OTUyMDkxNjY5.XYVktg.f-CZdHTTMhdnIovip-F1wNEDOjU';
 
 //Prefix and Version 
 const PREFIX = '!';
-const version = '**1.0.5**_WIP';
+const version = '**1.0.7**_WIP';
   
 var fs = require('fs');
 var commandsList = fs.readFileSync('Storage/commands.txt', 'utf8');
@@ -154,10 +154,14 @@ bot.on('message' , message=>{
                 title: "*AVAILABLE COMMANDS*",
                 description: "A list of all available commands to use for normal Members.",
                 fields:[{
-                    name: "**!kirks hangar**",
+                    name: "**!website**",
                     value: "Sends an Embed with the Link to the official Kirks Hangar Website aswell as the IP adresses for both the Caucasus and the Persian Gulf server."
                 },
-                   {
+                {
+                    name: "**!server**",
+                    value: "Sends the IP's Kirks Hangar 1 & 2."
+                },
+                {
                     name: "**!ping**",
                     value: "Makes the bot reply with [pong!]"
                 },
@@ -165,7 +169,10 @@ bot.on('message' , message=>{
                     name: "**!author**",
                     value: "Who made this bot."
                 },
-                
+                {
+                    name: "**!info version**",
+                    value: "What version this bot is on."
+                },
                 {
                     name: "**!commands**",
                     value: "Will bring up and embed with commands only available to Bacon Staff."
