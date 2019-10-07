@@ -97,7 +97,7 @@ bot.on('message' , message=>{
                     description: "",
                   fields:[{
                       name: "**-=Kirks Hangar=-**",
-                      value:"IP: *W I P*"
+                      value:"IP: *88.99.29.4:10308*"
                     },
                     {  
                       name: "**-=Kirks Hangar 2=-**",
