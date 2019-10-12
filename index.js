@@ -77,32 +77,15 @@ bot.on('message' , message=>{
                 message.channel.send({embed: {
                     color: 3447003,
                     author: { },
-                    title: "**The website for -=Kirks Hangar=-**",
-                    description: "*Kirks-Hangar is a public server and community, which is open for everyone, who is interessted in simulation flying. Kirks-Hangar is also the homebase of the BACON Squadron, a naval ops focused DCS squadron, which mainly operates the F/A-18C Lot 20 and the AV8B NA. Our server is located in Germany and is mostly used, to host a freeflight training mission.*  ",
+                    title: "**Public operations and events on Kirks Hangar**",
+                    description: "Operations or other events are organized in text channels like **#operation-planning** or **#operation-discussion**. In the current state #operation-planning is used to sign yourself up for an operation. Upon signing up you will receive the **Operation member** role. With this role you read the #operation-discussion text channel and join the **Operation Briefing/Debrief** voicechannel. The date of the operation is determined by the availability of the participants.",
                   timestamp: new Date(),
                     footer: {
-                      text: "© -CAPT Kirk CAG BACON Squadron and Admin of Kirks-Hangar. "
+                      text: "© -Bacon Staff"
                     }
                   }
                 });
             break;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
           case "website" :
                 message.channel.send({embed: {
@@ -199,6 +182,10 @@ bot.on('message' , message=>{
                 {
                     name: "**!info version**",
                     value: "What version this bot is on."
+                },
+                {
+                    name: "**!operations**",
+                    value: "Informs you about Operations and events on/in the Kirks Hangar server."
                 },
                 {
                     name: "**!commands**",
