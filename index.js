@@ -17,9 +17,10 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 //do not share this token with anyone else
 const token = 'NjIxNjc5ODE0OTUyMDkxNjY5.XYVktg.f-CZdHTTMhdnIovip-F1wNEDOjU';
-//Prefix and Version 
+//Prefix 
 const PREFIX = '!';
-const version = '**1.0.7**_WIP'; 
+//Version
+const version = '**1.0.8**_WIP'; 
 var fs = require('fs');
 var commandsList = fs.readFileSync('Storage/commands.txt', 'utf8');
 
