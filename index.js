@@ -33,7 +33,8 @@ const MissionChange_Info = new Discord.RichEmbed()
           .addField('**CAPT Kirk**','Can change the current mission and restart the server if crashed/down.')
           .addField('**LTJG Per_von_Harke**','Can change the current mission on the server.')
           .setFooter('Please note that the server might not be visible hours after a new DCS Openbeta Update.','https://i.imgur.com/S8FID73.png')
-
+          
+            
 const Ban_Info = new Discord.RichEmbed()
           .setColor (3447003)
           .setTitle ('INFORMATION ABOUT BANS')
@@ -42,7 +43,7 @@ const Ban_Info = new Discord.RichEmbed()
           .addField ('**What gets me banned?**','Intentional teamkilling through weapons or ramming. Being racist in chat might also get you banned/muted.')
           .addField ('**I am banned. How long will it last?**','SL mod adds points to a value unique to every player upon teamkilling. If this value exceeds a specific amount you get banned. This value decreases over time so you will get unbanned over time depending on your action (the more points the longer the ban). ')
           .addField ('"**I killed my friend for fun"**','If this is the case please message anyone from the **@BaconStaff** with proof that it was your friend.')
-          
+          .addField ('**So there is no perma ban?**','When repeatedly violating the rules and/or trying to get around the SL mod system you might get permantly banned.')
 
 
 
@@ -217,6 +218,10 @@ bot.on('message' , message=>{
                 {
                     name: "**!missionchange**",
                     value: "Gives you a list of people who can change the current mission or restart the server."
+                },
+                {
+                    name: "**!ban_info**",
+                    value: "FAQ/Info about bans."
                 },
                 {
                     name: "**!commands**",
