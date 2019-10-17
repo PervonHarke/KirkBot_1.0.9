@@ -40,9 +40,9 @@ const Ban_Info = new Discord.RichEmbed()
           .setDescription ('\u200b')
           .setThumbnail ('https://i.imgur.com/S8FID73.png')
           .addField ('**What gets me banned?**','Intentional teamkilling through weapons or ramming. Being racist in chat might also get you banned/muted.')
-          .addField ('**I am banned. How long will it last?**','SL mod adds points to a value unique to every player upon teamkilling. If this value exceedsa specific amount you get banned. This value decreases over time so you will get unbanned over time depending on your action (the more points the longer the ban). ')
+          .addField ('**I am banned. How long will it last?**','SL mod adds points to a value unique to every player upon teamkilling. If this value exceeds a specific amount you get banned. This value decreases over time so you will get unbanned over time depending on your action (the more points the longer the ban). ')
           .addField ('"**I killed my friend for fun"**','If this is the case please message anyone from the **@BaconStaff** with proof that it was your friend.')
-          .addField ()
+          
 
 
 
