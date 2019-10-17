@@ -34,6 +34,18 @@ const MissionChange_Info = new Discord.RichEmbed()
           .addField('**LTJG Per_von_Harke**','Can change the current mission on the server.')
           .setFooter('Please note that the server might not be visible hours after a new DCS Openbeta Update.','https://i.imgur.com/S8FID73.png')
 
+const Ban_Info = new Discord.RichEmbed()
+          .setColor (3447003)
+          .setTitle ('')
+          
+
+
+
+
+
+
+
+
 // "playing..." Status für den Bot. 
 bot.on('ready' , () => {
     console.log('The bot is online and ready!');
