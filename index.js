@@ -29,9 +29,10 @@ const MissionChange_Info = new Discord.RichEmbed()
           .setTitle ('**CHANGING THE MISSION IN THE DCS SERVER**')
           .setDescription ('List of all people who can change the current mission of the Server. And/or restart it if necessary.If you want to have the mission changed ping one of these poeple (whoever is online). The majority of players currently playing on the server should be in favor of a mission change.')
           .setThumbnail ('https://i.imgur.com/S8FID73.png')
-          .addField('CAPT **Recon** DCAG','Can change maps and restart the server if crashed/down.')
-          .addField('CAPT **Kirk**','Can change maps and restart the server if crashed/down.')
-          .addField('LTJG **Per_von_Harke**','Can change the current map on the server.')
+          .addField('**CAPT Recon DCAG**','Can change maps and restart the server if crashed/down.')
+          .addField('**CAPT Kirk**','Can change maps and restart the server if crashed/down.')
+          .addField('**LTJG Per_von_Harke**','Can change the current map on the server.')
+          .setFooter('**Please note that the server might not be visible hours after a DCS Openbeta Update.**')
 
 // "playing..." Status für den Bot. 
 bot.on('ready' , () => {
@@ -198,6 +199,10 @@ bot.on('message' , message=>{
                     value: "Informs you about Operations and events on/in the Kirks Hangar server."
                 },
                 {
+                    name: "**!missionchange**",
+                    value: "Gives you a list of people who can change the current mission or restart the server."
+                },
+                {
                     name: "**!commands**",
                     value: "Will bring up and embed with commands only available to Bacon Staff."
                 },
@@ -232,8 +237,8 @@ bot.on('message' , message=>{
             break;
           }
           
-      case 'mapchange' : {
-        message.channel.send( MapChange_Info);
+      case 'missionchange' : {
+        message.channel.send(MissionChange_Info);
       break;
       }
         
