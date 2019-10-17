@@ -24,6 +24,10 @@ const version = '**1.0.8**_WIP';
 var fs = require('fs');
 var commandsList = fs.readFileSync('Storage/commands.txt', 'utf8');
 
+const InfoEmbed_1 = new Discord.RichEmbed()
+          .setColor ('3447003')
+          .setTitle ('**CHANGING THE MISSION IN THE DCS SERVER**')
+          .setThumbnail ('https://i.imgur.com/S8FID73.png')
 
 
 
@@ -226,22 +230,29 @@ bot.on('message' , message=>{
             break;
           }
           
+      case 'test123' : {
+        channel.send(InfoEmbed_1);
+      break;
+      }
+        
+        
+        
           case 'mapchange':  {
             message.channel.send({embed : {
                 color: 3447003,
                 author: { },
-                title: "*CHANGING THE MISSION FOR THE DCS SERVER*",
-                description: "List of all people who can change the current mission of the Server.",
+                title: "**CHANGING THE MISSION FOR THE DCS SERVER**",
+                description: "List of all people who can change the current mission of the Server. And/or restart it if necessary.",
                 fields : [{
-                   name: "CAPT Recon DCAG",
+                   name: "CAPT **Recon** DCAG",
                    value:"Can change maps and restart the server if crashed/down.",
                 },
                 {
-                   name: "LTJG Per_von_Harke",
+                   name: "LTJG **Per_von_Harke**",
                    value:"Can change the map.",
                 },
                 {
-                   name: "CAPT Kirk",
+                   name: "CAPT **Kirk**",
                    value:"Can change maps and restart the server if crashed/down.",
                 }
                 ],
@@ -252,7 +263,8 @@ bot.on('message' , message=>{
               }
             });  
             break;
-                
+           
+          
        }
     }    
 })
