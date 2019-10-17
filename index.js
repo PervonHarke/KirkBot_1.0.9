@@ -23,9 +23,7 @@ const PREFIX = '!';
 const version = '**1.0.8**_WIP'; 
 var fs = require('fs');
 var commandsList = fs.readFileSync('Storage/commands.txt', 'utf8');
-var fs = require("fs"); 
 
-var userData = JSON.parse(fs.readFileSync('Storage/UserData.json','utf8'));
 
 
 
@@ -228,8 +226,7 @@ bot.on('message' , message=>{
             break;
           }
           
-      
-          case 'changemap':  {
+          case 'mapchange':  {
             message.channel.send({embed : {
                 color: 3447003,
                 author: { },
@@ -237,8 +234,17 @@ bot.on('message' , message=>{
                 description: "List of all people who can change the current mission of the Server.",
                 fields : [{
                    name: "CAPT Recon DCAG",
-                  
-                }],
+                   value:"Can change maps and restart the server if crashed/down.",
+                },
+                {
+                   name: "LTJG Per_von_Harke",
+                   value:"Can change the map.",
+                },
+                {
+                   name: "CAPT Kirk",
+                   value:"Can change maps and restart the server if crashed/down.",
+                }
+                ],
                 timestamp: new Date(),
                 footer: {
                 text: '© -LTJG Per_von_Harke '
