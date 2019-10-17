@@ -44,8 +44,8 @@ const Ban_Info = new Discord.RichEmbed()
           .addField ('**I am banned. How long will it last?**','SL mod adds points to a value unique to every player upon teamkilling. If this value exceeds a specific amount you get banned. This value decreases over time so you will get unbanned over time depending on your action (the more points the longer the ban). ')
           .addField ('"**I killed my friend for fun"**','If this is the case please message anyone from the **@BaconStaff** with proof that it was your friend.')
           .addField ('**So there is no perma ban?**','When repeatedly violating the rules and/or trying to get around the SL mod system you might get permantly banned.')
-
-
+          .setFooter('-Bacon Staff/Police','https://i.imgur.com/S8FID73.png')
+          .setTimestamp()
 
 
 
