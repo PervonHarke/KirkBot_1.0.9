@@ -23,8 +23,13 @@ const PREFIX = '!';
 const version = '**1.0.8**_WIP'; 
 var fs = require('fs');
 var commandsList = fs.readFileSync('Storage/commands.txt', 'utf8');
+var fs = require("fs"); 
+
+var userData = JSON.parse(fs.readFileSync(Storage))
 
 
+
+// "playing..." Status für den Bot. 
 bot.on('ready' , () => {
     console.log('The bot is online and ready!');
     bot.user.setActivity('DCS World on -=Kirks Hangar=-' , { tpye: 'PLAYING'}).catch(console.error);
