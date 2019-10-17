@@ -71,20 +71,16 @@ bot.on('message' , message=>{
                  // Send a message
                 message.channel.send('pong!');
               }
-            break;
+        break;
         
-        
-       //Author command
-       break; 
+        //break; 
         case 'author' : 
             message.channel.send('I was made by *LTJG Per_von_Harke*')
-            break;
+        break;
         
         
         // The bot will send an embed with the Link as the title a little description and a a little text at the bottom of the inbed with the author of the website. 
-        
-
-           case "operations" :
+        case "operations" :
                 message.channel.send({embed: {
                     color: 3447003,
                     author: { },
@@ -96,9 +92,9 @@ bot.on('message' , message=>{
                     }
                   }
                 });
-            break;
+        break;
 
-          case "website" :
+        case "website" :
                 message.channel.send({embed: {
                     color: 3447003,
                     author: { },
@@ -111,7 +107,7 @@ bot.on('message' , message=>{
                     }
                   }
                 });
-            break;
+        break;
         
         
         //IP adress of each available server.
