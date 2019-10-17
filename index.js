@@ -25,7 +25,7 @@ var fs = require('fs');
 var commandsList = fs.readFileSync('Storage/commands.txt', 'utf8');
 var fs = require("fs"); 
 
-var userData = JSON.parse(fs.readFileSync(Storage))
+var userData = JSON.parse(fs.readFileSync('Storage/UserData.json','utf8'));
 
 
 
@@ -225,7 +225,28 @@ bot.on('message' , message=>{
                 }                
               }
             });  
-            break;        
+            break;
+          }
+          
+      
+          case 'changemap':  {
+            message.channel.send({embed : {
+                color: 3447003,
+                author: { },
+                title: "*CHANGING THE MISSION FOR THE DCS SERVER*",
+                description: "List of all people who can change the current mission of the Server.",
+                fields : [{
+                   name: "CAPT Recon DCAG",
+                  
+                }],
+                timestamp: new Date(),
+                footer: {
+                text: '© -LTJG Per_von_Harke '
+                }                
+              }
+            });  
+            break;
+                
        }
     }    
 })
