@@ -29,10 +29,10 @@ const MissionChange_Info = new Discord.RichEmbed()
           .setTitle ('**CHANGING THE MISSION IN THE DCS SERVER**')
           .setDescription ('List of all people who can change the current mission of the Server. And/or restart it if necessary.If you want to have the mission changed ping one of these poeple (whoever is online). The majority of players currently playing on the server should be in favor of a mission change.')
           .setThumbnail ('https://i.imgur.com/S8FID73.png')
-          .addField('**CAPT Recon DCAG**','Can change maps and restart the server if crashed/down.')
-          .addField('**CAPT Kirk**','Can change maps and restart the server if crashed/down.')
-          .addField('**LTJG Per_von_Harke**','Can change the current map on the server.')
-          .setFooter('**Please note that the server might not be visible hours after a DCS Openbeta Update.**')
+          .addField('**CAPT Recon DCAG**','Can change the current mission and restart the server if crashed/down.')
+          .addField('**CAPT Kirk**','Can change the current mission and restart the server if crashed/down.')
+          .addField('**LTJG Per_von_Harke**','Can change the current mission on the server.')
+          .setFooter('Please note that the server might not be visible hours after a new DCS Openbeta Update.','https://i.imgur.com/S8FID73.png')
 
 // "playing..." Status für den Bot. 
 bot.on('ready' , () => {
