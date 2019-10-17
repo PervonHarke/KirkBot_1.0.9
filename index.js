@@ -36,7 +36,11 @@ const MissionChange_Info = new Discord.RichEmbed()
 
 const Ban_Info = new Discord.RichEmbed()
           .setColor (3447003)
-          .setTitle ('')
+          .setTitle ('INFORMATION ABOUT BANS')
+          .setDescription ('\u200b')
+          .setThumbnail ('https://i.imgur.com/S8FID73.png')
+          //.addField('\u200b', '\u200b')
+          //.addField ()
           
 
 
@@ -77,6 +81,11 @@ bot.on('message' , message=>{
   
 
     switch(args[0]){
+        
+        case 'ban_info' :{
+        message.channel.send(Ban_Info);}  
+        break;
+        
         
         //ping pong
         case 'ping' :{
