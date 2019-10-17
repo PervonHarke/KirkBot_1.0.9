@@ -20,16 +20,18 @@ const token = 'NjIxNjc5ODE0OTUyMDkxNjY5.XYVktg.f-CZdHTTMhdnIovip-F1wNEDOjU';
 //Prefix 
 const PREFIX = '!';
 //Version
-const version = '**1.0.8**_WIP'; 
+const version = '**1.0.9**_WIP'; 
 var fs = require('fs');
 var commandsList = fs.readFileSync('Storage/commands.txt', 'utf8');
 
-const InfoEmbed_1 = new Discord.RichEmbed()
-          .setColor ('3447003')
+const MissionChange_Info = new Discord.RichEmbed()
+          .setColor (3447003)
           .setTitle ('**CHANGING THE MISSION IN THE DCS SERVER**')
+          .setDescription ('List of all people who can change the current mission of the Server. And/or restart it if necessary.If you want to have the mission changed ping one of these poeple (whoever is online). The majority of players currently playing on the server should be in favor of a mission change.')
           .setThumbnail ('https://i.imgur.com/S8FID73.png')
-
-
+          .addField('CAPT **Recon** DCAG','Can change maps and restart the server if crashed/down.')
+          .addField('CAPT **Kirk**','Can change maps and restart the server if crashed/down.')
+          .addField('LTJG **Per_von_Harke**','Can change the current map on the server.')
 
 // "playing..." Status für den Bot. 
 bot.on('ready' , () => {
@@ -230,42 +232,42 @@ bot.on('message' , message=>{
             break;
           }
           
-      case 'test123' : {
-        channel.send(InfoEmbed_1);
+      case 'mapchange' : {
+        message.channel.send( MapChange_Info);
       break;
       }
         
         
         
-          case 'mapchange':  {
-            message.channel.send({embed : {
-                color: 3447003,
-                author: { },
-                title: "**CHANGING THE MISSION FOR THE DCS SERVER**",
-                description: "List of all people who can change the current mission of the Server. And/or restart it if necessary.",
-                fields : [{
-                   name: "CAPT **Recon** DCAG",
-                   value:"Can change maps and restart the server if crashed/down.",
-                },
-                {
-                   name: "LTJG **Per_von_Harke**",
-                   value:"Can change the map.",
-                },
-                {
-                   name: "CAPT **Kirk**",
-                   value:"Can change maps and restart the server if crashed/down.",
-                }
-                ],
-                timestamp: new Date(),
-                footer: {
-                text: '© -LTJG Per_von_Harke '
-                }                
-              }
-            });  
-            break;
-           
-          
-       }
+//          case 'mapchange':  {
+//            message.channel.send({embed : {
+//                color: 3447003,
+//                author: { },
+//                title: "**CHANGING THE MISSION FOR THE DCS SERVER**",
+//                description: "List of all people who can change the current mission of the Server. And/or restart it if necessary.",
+//                fields : [{
+//                   name: "CAPT **Recon** DCAG",
+//                   value:"Can change maps and restart the server if crashed/down.",
+//                },
+//                {
+//                   name: "LTJG **Per_von_Harke**",
+//                   value:"Can change the map.",
+//                },
+//                {
+//                   name: "CAPT **Kirk**",
+//                  value:"Can change maps and restart the server if crashed/down.",
+//               }
+//                ],
+//                timestamp: new Date(),
+//               footer: {
+//                text: '© -LTJG Per_von_Harke '
+//                }                
+//             }
+//            });  
+//            break;
+//           
+//          
+//       }
     }    
 })
 
