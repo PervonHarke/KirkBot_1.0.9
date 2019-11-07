@@ -16,7 +16,7 @@ setInterval(() => {
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 //do not share this token with anyone else
-const token = 'NjIxNjc5ODE0OTUyMDkxNjY5.XYVktg.f-CZdHTTMhdnIovip-F1wNEDOjU';
+const token = 'TOKEN WOULD BE HERE';
 //Prefix 
 const PREFIX = '!';
 //Version
