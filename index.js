@@ -24,6 +24,7 @@ const version = '**1.0.9**_WIP';
 var fs = require('fs');
 var commandsList = fs.readFileSync('Storage/commands.txt', 'utf8');
 
+//rich embeds for information about who can change the server and what gets you banned
 const MissionChange_Info = new Discord.RichEmbed()
           .setColor (3447003)
           .setTitle ('**CHANGING THE MISSION IN THE DCS SERVER**')
@@ -33,8 +34,7 @@ const MissionChange_Info = new Discord.RichEmbed()
           .addField('**CAPT Kirk**','Can change the current mission and restart the server if crashed/down.')
           .addField('**LTJG Per_von_Harke**','Can change the current mission on the server.')
           .setFooter('Please note that the server might not be visible hours after a new DCS Openbeta Update.','https://i.imgur.com/S8FID73.png')
-          
-            
+                     
 const Ban_Info = new Discord.RichEmbed()
           .setColor (3447003)
           .setTitle ('INFORMATION ABOUT BANS')
@@ -57,11 +57,10 @@ bot.on('ready' , () => {
 })
 
 bot.on('message' , message=>{
-   
-  
   // searches messages for the " ! " PREFIX that iniates a command for the bot. 
   let args = message.content.substring(PREFIX.length).split(" ");
     
+  
   
   //Chatfilter
   let blacklisted = ['Nigger','Gas the Jews','Hitler did nothing Wrong','urethra play','neger',]; 
@@ -76,15 +75,15 @@ bot.on('message' , message=>{
     }
 
   
+  
     //prevents other bots from performing commands.
     if (message.author.bot) return;
-  
-
     switch(args[0]){
         
         case 'ban_info' :{
         message.channel.send(Ban_Info);}  
         break;
+        
         
         
         //ping pong
@@ -94,10 +93,13 @@ bot.on('message' , message=>{
               }
         break;
         
+        
+        
         //break; 
         case 'author' : 
             message.channel.send('I was made by *LTJG Per_von_Harke*')
         break;
+        
         
         
         // The bot will send an embed with the Link as the title a little description and a a little text at the bottom of the inbed with the author of the website. 
@@ -114,6 +116,8 @@ bot.on('message' , message=>{
                   }
                 });
         break;
+        
+        
 
         case "website" :
                 message.channel.send({embed: {
@@ -129,6 +133,7 @@ bot.on('message' , message=>{
                   }
                 });
         break;
+        
         
         
         //IP adress of each available server.
@@ -155,8 +160,59 @@ bot.on('message' , message=>{
                   }
                 });
             break;
+        
+        //IP adress of each available server.
+        case "servers" :
+                message.channel.send({embed: {
+                    color: 3447003,
+                    author: { },
+                    title: "",
+                    url: "",
+                    description: "",
+                  fields:[{
+                      name: "**-=Kirks Hangar=-**",
+                      value:"IP: *88.99.29.4:10308*"
+                    },
+                    {  
+                      name: "**-=Kirks Hangar 2=-**",
+                      value:"IP: *88.99.29.4:10309*",
+                    }      
+                    ],
+                  timestamp: new Date(),
+                    footer: {
+                      text: "© -CAPT Kirk "
+                    }
+                  }
+                });
+            break;
+        
+        //IP adress of each available server.
+        case "server info" :
+                message.channel.send({embed: {
+                    color: 3447003,
+                    author: { },
+                    title: "",
+                    url: "",
+                    description: "",
+                  fields:[{
+                      name: "**-=Kirks Hangar=-**",
+                      value:"IP: *88.99.29.4:10308*"
+                    },
+                    {  
+                      name: "**-=Kirks Hangar 2=-**",
+                      value:"IP: *88.99.29.4:10309*",
+                    }      
+                    ],
+                  timestamp: new Date(),
+                    footer: {
+                      text: "© -CAPT Kirk "
+                    }
+                  }
+                });
+            break;
 
 
+        
         // if only "info" is typed in the bot will respond with an error message else it will answer with the current version.
         case 'info' :
             if (args[1] === 'version'){
@@ -184,7 +240,7 @@ bot.on('message' , message=>{
         break;                    
         
 
-        //Help Embed
+        //HELP EMBED
         case 'help':  {
             message.channel.send({embed : {
                 color: 3447003,
@@ -235,8 +291,9 @@ bot.on('message' , message=>{
                 }                
               }
             });  
-            break;
-          }
+            break;}
+       
+        
         
           //Bacon Staff Commands
           case 'commands':  {
@@ -261,39 +318,7 @@ bot.on('message' , message=>{
       case 'missionchange' : {
         message.channel.send(MissionChange_Info);
       break;
-      }
-        
-        
-        
-//          case 'mapchange':  {
-//            message.channel.send({embed : {
-//                color: 3447003,
-//                author: { },
-//                title: "**CHANGING THE MISSION FOR THE DCS SERVER**",
-//                description: "List of all people who can change the current mission of the Server. And/or restart it if necessary.",
-//                fields : [{
-//                   name: "CAPT **Recon** DCAG",
-//                   value:"Can change maps and restart the server if crashed/down.",
-//                },
-//                {
-//                   name: "LTJG **Per_von_Harke**",
-//                   value:"Can change the map.",
-//                },
-//                {
-//                   name: "CAPT **Kirk**",
-//                  value:"Can change maps and restart the server if crashed/down.",
-//               }
-//                ],
-//                timestamp: new Date(),
-//               footer: {
-//                text: '© -LTJG Per_von_Harke '
-//                }                
-//             }
-//            });  
-//            break;
-//           
-//          
-//       }
+      }            
     }    
 })
 
