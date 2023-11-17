@@ -63,7 +63,7 @@ bot.on('message' , message=>{
   
   
   //Chatfilter
-  let blacklisted = ['Nigger','Gas the Jews','Hitler did nothing Wrong','urethra play','neger',]; 
+  let blacklisted = []; 
   let foundInText = false;
   for (var i in blacklisted){ //This loops each item blacklisted
       if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
